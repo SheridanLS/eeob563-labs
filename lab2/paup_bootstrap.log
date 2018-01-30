@@ -1,0 +1,2586 @@
+
+P A U P *
+Version 4.0a (build 159) for Unix/Linux (built on Nov 17 2017 at 11:35:17)
+Tue Jan 30 10:24:39 2018
+
+        -----------------------------NOTICE-----------------------------
+          This is an alpha-test version that is still changing rapidly.
+          It will expire on 1 Apr 2018.
+        
+          Please report bugs to dave@phylosolutions.com
+        ----------------------------------------------------------------
+
+
+paup> outgroup 1-2; set outroot=mono;
+
+Outgroup status changed:
+  2 taxa transferred to outgroup
+  Total number of taxa now in outgroup = 2
+  Number of ingroup taxa = 18
+
+paup> bootstrap [bootstrap options] [/hsearch options]
+
+Bootstrap method with heuristic search:
+  Number of bootstrap replicates = 100
+  Starting seed = generated automatically
+  Number of characters resampled in each replicate = 382
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 382 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        198 characters are constant
+        61 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 123
+    Gaps are treated as "missing"
+  Starting tree(s) obtained via stepwise addition
+    Addition sequence: simple (reference taxon = Platypus)
+    Number of trees held at each step = 1
+  Branch-swapping algorithm: tree-bisection-reconnection (TBR) with reconnection limit = 8
+    Steepest descent option not in effect
+  Initial 'Maxtrees' setting = 100
+  Branches collapsed (creating polytomies) if maximum branch length is zero
+  'MulTrees' option in effect
+  No topological constraints in effect
+  Trees are unrooted
+
+  100 bootstrap replicates completed
+  Time used = 0.83 sec (CPU time = 0.82 sec)
+
+Bootstrap 50% majority-rule consensus tree
+
+                                                        /---------------------------- Platypus(1)
+/-------------------------------------------------------+
+|                                                       \---------------------------- Echidna(2)
+|
+|                                                       /---------------------------- Opossum(3)
+|                                                       |
+|                           /------------99-------------+---------------------------- Wallaby(4)
+|                           |                           |
+|                           |                           \---------------------------- Bandicoot(5)
+|                           |
+|                           +-------------------------------------------------------- Elephant(6)
+|                           |
+100                         +-------------------------------------------------------- Aardvark(7)
+|                           |
+|                           +-------------------------------------------------------- Tenrec(8)
+|                           |
+|                           +-------------------------------------------------------- Sloth(9)
+|                           |
+|                           +-------------------------------------------------------- Armadillo(10)
+|                           |
+|                           +-------------------------------------------------------- Human(11)
+|                           |
+\---------------------------+-------------------------------------------------------- Tree shrew(12)
+                            |
+                            +-------------------------------------------------------- Rabbit(13)
+                            |
+                            +-------------------------------------------------------- Mouse(14)
+                            |
+                            +-------------------------------------------------------- Hedgehog(15)
+                            |
+                            +-------------------------------------------------------- Flying fox(16)
+                            |
+                            +-------------------------------------------------------- Cat(17)
+                            |
+                            +-------------------------------------------------------- Dog(18)
+                            |
+                            +-------------------------------------------------------- Pig(19)
+                            |
+                            \-------------------------------------------------------- Whale(20)
+
+Bipartitions found in one or more trees and frequency of occurrence (bootstrap support values):
+
+         1         2
+12345678901234567890          Freq
+----------------------------------
+..******************        100.00
+..***...............         99.40
+..**................         48.50
+.....***************         47.33
+...**...............         45.30
+.......*.*..........         38.22
+................**..         38.07
+...............*..*.         35.21
+...............*..**         34.98
+.....*..*.*.........         32.00
+..................**         30.83
+.....*..*...........         30.05
+........**..........         25.60
+.....*....*.........         22.67
+........*.*.........         21.35
+...........**.......         21.29
+.....********.******         17.86
+.............**.....         15.27
+...........*...*..*.         13.50
+........*...*.......         13.00
+.....**...*.........         12.50
+..*****.************         12.14
+.....**.************         12.00
+..***********.******         11.00
+.....*........*.....         10.50
+........**..*.......         10.00
+.....**.*.*.........          9.50
+.....*..........*...          9.33
+...........*...*..**          9.25
+..***........*......          9.07
+.....**.............          9.00
+..........*...*.....          8.75
+............*...*...          8.33
+..****.*************          7.59
+...........*......*.          7.23
+.......*.*....*.....          7.00
+.......***..........          7.00
+.......*.*.*........          6.67
+.......*......*.....          6.61
+.....*....*...*.....          6.50
+.............*..**..          6.25
+..****..*.*.........          6.00
+.....**...*.....**..          6.00
+..*.*...............          6.00
+..............*..*..          5.87
+...........*...*....          5.56
+......*...*.........          5.50
+.....*..*.*...*.....          5.00
+..........*......*..          5.00
+
+625 groups at (relative) frequency less than 5% not shown
+
+paup> bootstrap nreps=200 treefile=boot.tre search=heuristic /start=stepwise addseq=random nreps=10 swap=TBR;
+
+Bootstrap method with heuristic search:
+  Number of bootstrap replicates = 200
+  Starting seed = generated automatically
+  Number of characters resampled in each replicate = 382
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 382 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        198 characters are constant
+        61 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 123
+    Gaps are treated as "missing"
+  Starting tree(s) obtained via stepwise addition
+    Addition sequence: random
+    Number of replicates = 10
+    Starting seed = generated automatically
+    Number of trees held at each step = 1
+  Branch-swapping algorithm: tree-bisection-reconnection (TBR) with reconnection limit = 8
+    Steepest descent option not in effect
+  Initial 'Maxtrees' setting = 100
+  Branches collapsed (creating polytomies) if maximum branch length is zero
+  'MulTrees' option in effect
+  No topological constraints in effect
+  Trees are unrooted
+
+  200 bootstrap replicates completed
+  Time used = 11.84 sec (CPU time = 11.83 sec)
+
+Trees for each replicate written to treefile: ~/eeob563/eeob563-labs/lab2/boot.tre
+
+Bootstrap 50% majority-rule consensus tree
+
+                                                               /--------------------- Platypus(1)
+/--------------------------------------------------------------+
+|                                                              \--------------------- Echidna(2)
+|
+|                                         /------------------------------------------ Opossum(3)
+|                                         |
+|                    /---------98---------+                    /--------------------- Wallaby(4)
+|                    |                    \---------54---------+
+100                  |                                         \--------------------- Bandicoot(5)
+|                    |
+|                    |                                         /--------------------- Elephant(6)
+|                    |                                         |
+|                    |                                         +--------------------- Aardvark(7)
+|                    |                                         |
+|                    |                                         +--------------------- Tenrec(8)
+\--------------------+                                         |
+                     |                                         +--------------------- Sloth(9)
+                     |                                         |
+                     |                                         +--------------------- Armadillo(10)
+                     |                                         |
+                     |                                         +--------------------- Human(11)
+                     |                                         |
+                     |                                         +--------------------- Tree shrew(12)
+                     |                                         |
+                     \-------------------51--------------------+--------------------- Rabbit(13)
+                                                               |
+                                                               +--------------------- Mouse(14)
+                                                               |
+                                                               +--------------------- Hedgehog(15)
+                                                               |
+                                                               +--------------------- Flying fox(16)
+                                                               |
+                                                               +--------------------- Cat(17)
+                                                               |
+                                                               +--------------------- Dog(18)
+                                                               |
+                                                               +--------------------- Pig(19)
+                                                               |
+                                                               \--------------------- Whale(20)
+
+Bipartitions found in one or more trees and frequency of occurrence (bootstrap support values):
+
+         1         2
+12345678901234567890          Freq        %
+-------------------------------------------
+..******************        200.00  100.00%
+..***...............        195.20   97.60%
+...**...............        107.08   53.54%
+.....***************        102.34   51.17%
+..**................         84.78   42.39%
+...............*..*.         78.28   39.14%
+.......*.*..........         76.78   38.39%
+...............*..**         76.54   38.27%
+..................**         66.37   33.19%
+................**..         61.03   30.51%
+.....*..*.*.........         59.88   29.94%
+........**..........         47.67   23.83%
+........*.*.........         43.97   21.98%
+.....*..*...........         43.09   21.55%
+........**..*.......         37.88   18.94%
+.....********.******         37.12   18.56%
+.....*....*.........         34.85   17.42%
+.....*..........*...         32.27   16.13%
+........*...*.......         31.08   15.54%
+...........**.......         29.31   14.66%
+.....*........*.....         27.14   13.57%
+.............**.....         24.76   12.38%
+.....**.........*...         21.97   10.99%
+.......***..........         21.60   10.80%
+..........*......*..         20.55   10.28%
+..*****************.         20.36   10.18%
+.....**.************         20.10   10.05%
+.....**.*.*.........         19.44    9.72%
+.....*....*...*.....         19.02    9.51%
+..***........*......         17.74    8.87%
+.....**...*.........         17.48    8.74%
+..*****.************         17.15    8.58%
+.....**...*.....**..         15.05    7.53%
+.....**...*...*.**..         14.50    7.25%
+...........*......*.         14.48    7.24%
+.....**...*...*.....         13.83    6.92%
+...........*.....*..         13.62    6.81%
+...........*...*..**         13.33    6.67%
+.......*......*.....         13.25    6.62%
+.............*..**..         13.23    6.62%
+..........*...*.....         12.97    6.49%
+.....**.............         12.85    6.42%
+.......*.*....*.....         12.79    6.40%
+..***********.******         12.63    6.31%
+..***..*............         12.61    6.31%
+............*...*...         12.47    6.24%
+...........*..*.....         12.19    6.10%
+.........*..*.......         11.93    5.97%
+..............*..*..         11.90    5.95%
+..****.*************         11.85    5.92%
+............*..*....         10.96    5.48%
+.....**.*****.******         10.35    5.18%
+........***.........         10.29    5.15%
+.....*..*.*.....*...         10.15    5.08%
+
+1251 groups at (relative) frequency less than 5% not shown
+
+paup> savetrees file=bootMajRule.tree from=1 to=1 savebootp=nodelabels;
+
+1 tree saved to file "~/eeob563/eeob563-labs/lab2/bootMajRule.tree"
+
+paup> gettrees file=boot.tre StoreTreeWts=yes mode=3;
+
+Processing TREES block from file: ~/eeob563/eeob563-labs/lab2/boot.tre
+  Keeping: trees from file (replacing any trees already in memory)
+
+The limit of 100 trees (= 'Maxtrees') has been reached.  Do you want to increase Maxtrees?
+
+Do you want to increase 'Maxtrees'? (Y/n)y
+
+Enter new value for 'Maxtrees' (200):200
+
+Action if limit is hit:
+   (1) Prompt for new value
+   (2) Automatically increase by 100 (= AUTOINC)
+   (3) Leave unchanged, and don't prompt
+(1)>3
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+
+******  
+******  Warning: Processing of Trees block(s) terminated prematurely due to 'Maxtrees' limit.
+******  
+  200 trees read from file
+
+  Time used = 59.71 sec (CPU time = 0.02 sec)
+
+paup> contree all/strict=no majrule=yes usetreewts=yes treefile=bootMajRule.tre;
+
+50% Majority-rule consensus of 200 trees (using tree weights, sum = 66.7143)
+
+                                                        /---------------------------- Platypus(1)
+/-------------------------------------------------------+
+|                                                       \---------------------------- Echidna(2)
+|
+|                                                       /---------------------------- Opossum(3)
+|                                                       |
+|                           /------------99-------------+---------------------------- Wallaby(4)
+|                           |                           |
+100                         |                           \---------------------------- Bandicoot(5)
+|                           |
+|                           |                           /---------------------------- Elephant(6)
+|                           |                           |
+|                           |                           +---------------------------- Aardvark(7)
+|                           |                           |
+|                           |                           +---------------------------- Tenrec(8)
+\---------------------------+                           |
+                            |                           +---------------------------- Sloth(9)
+                            |                           |
+                            |                           +---------------------------- Armadillo(10)
+                            |                           |
+                            |                           +---------------------------- Human(11)
+                            |                           |
+                            |                           +---------------------------- Tree shrew(12)
+                            |                           |
+                            \------------61-------------+---------------------------- Rabbit(13)
+                                                        |
+                                                        +---------------------------- Mouse(14)
+                                                        |
+                                                        +---------------------------- Hedgehog(15)
+                                                        |
+                                                        +---------------------------- Flying fox(16)
+                                                        |
+                                                        +---------------------------- Cat(17)
+                                                        |
+                                                        +---------------------------- Dog(18)
+                                                        |
+                                                        +---------------------------- Pig(19)
+                                                        |
+                                                        \---------------------------- Whale(20)
+
+Bipartitions found in one or more trees and frequency of occurrence:
+
+         1         2
+12345678901234567890          Freq        %
+-------------------------------------------
+..******************         66.71  100.00%
+..***...............         65.71   98.50%
+.....***************         40.52   60.74%
+..**................         32.87   49.27%
+...**...............         32.04   48.03%
+...............*..**         29.33   43.96%
+................**..         26.23   39.32%
+.......*.*..........         25.59   38.35%
+...............*..*.         25.19   37.76%
+.....*..*.*.........         24.31   36.45%
+..................**         23.85   35.75%
+........**..........         17.83   26.72%
+.....*..*...........         16.71   25.05%
+.....********.******         16.70   25.03%
+........*.*.........         15.31   22.96%
+...........**.......         12.27   18.39%
+.....**.*.*.........         11.26   16.88%
+.............**.....         11.12   16.67%
+.....*....*.........         10.60   15.89%
+.....*..........*...         10.19   15.27%
+.....*........*.....          9.20   13.79%
+.......***..........          7.77   11.64%
+.....*....*...*.....          7.60   11.39%
+........**..*.......          7.48   11.21%
+..*****.************          7.33   10.99%
+.....**...*...*.**..          6.92   10.37%
+.....**.************          6.71   10.06%
+.....**.........*...          6.22    9.33%
+.............*..**..          6.10    9.14%
+........*...*.......          5.89    8.82%
+...........*......*.          5.33    7.99%
+.....**...*.....**..          5.22    7.83%
+...........**..*..**          5.17    7.74%
+.....**...*...*.....          5.00    7.49%
+..........*...*.....          4.82    7.23%
+.......*......*.....          4.67    7.00%
+.....**.*.*.....**..          4.61    6.92%
+............*...*...          4.60    6.90%
+.........*..*.......          4.60    6.90%
+.............**.**..          4.40    6.60%
+..***........*......          4.33    6.50%
+.......***.**.......          4.24    6.36%
+..........*......*..          4.23    6.34%
+..***********.******          4.20    6.30%
+.....********.*.**..          4.17    6.25%
+.......***..*.......          4.08    6.12%
+........**.........*          4.00    6.00%
+...........*...*..**          4.00    5.99%
+.....**...*.........          3.98    5.96%
+.....*..*.*.....**..          3.71    5.56%
+..****.*************          3.70    5.55%
+............*......*          3.67    5.50%
+..*****************.          3.67    5.50%
+...........*.....*..          3.46    5.18%
+.....**.*****.******          3.38    5.06%
+.....**.............          3.31    4.96%
+.....********.......          3.30    4.95%
+.......*.........*..          3.29    4.93%
+.......***....*.....          3.20    4.80%
+...........*...*..*.          3.19    4.78%
+..........*...*..*..          3.04    4.55%
+........***.........          3.00    4.50%
+........**.**.......          2.58    3.87%
+.............**..*..          2.53    3.80%
+.....*.*************          2.50    3.75%
+.....**.***.********          2.50    3.75%
+.....**************.          2.50    3.75%
+.....*..*.*.....*...          2.40    3.60%
+.......*.*....*.....          2.33    3.50%
+...........*..*.....          2.27    3.40%
+.....*.............*          2.20    3.30%
+.......*...*........          2.20    3.30%
+.......*.*.**.......          2.20    3.30%
+..............*..*..          2.17    3.25%
+............*..*....          2.12    3.19%
+.......*.*.*********          2.00    3.00%
+..*****.******.*****          2.00    3.00%
+......**............          2.00    3.00%
+...............***..          2.00    3.00%
+.....*..*.*...*.....          2.00    3.00%
+.......*.*.*........          2.00    3.00%
+.......*.*.**..*..**          2.00    3.00%
+.......******.******          2.00    3.00%
+.....******.*.*.**..          2.00    3.00%
+.....**.***.*.*.....          2.00    3.00%
+.......***.**..*..**          2.00    3.00%
+.....**...*..**.**..          2.00    3.00%
+.....*..***...*.....          2.00    3.00%
+...........**......*          2.00    3.00%
+.....******..**.**..          2.00    3.00%
+.............*..*...          2.00    3.00%
+.....*..*.*........*          2.00    3.00%
+.......*.....*......          1.95    2.92%
+..****..............          1.90    2.85%
+..*********.********          1.88    2.82%
+..***..*............          1.88    2.81%
+.....**.*.**........          1.80    2.70%
+.....***..***.******          1.67    2.50%
+.....********...**..          1.67    2.50%
+.....***..**..*****.          1.67    2.50%
+......*...........*.          1.67    2.50%
+.....**...*.....*...          1.64    2.46%
+..*****.*.*.........          1.60    2.40%
+..*****.*.*...*.....          1.60    2.40%
+.........*...**.....          1.60    2.40%
+.....******..**.**.*          1.50    2.25%
+.....*******.*******          1.50    2.25%
+......*.........*...          1.50    2.25%
+.....******...*.*...          1.50    2.25%
+.........*....*.....          1.50    2.25%
+.....*.****..**.**..          1.50    2.25%
+......*...*......*..          1.50    2.25%
+.....**********.**..          1.50    2.25%
+........***.*.......          1.50    2.25%
+.....*....*...*.**..          1.48    2.21%
+.....***..*...*.**..          1.44    2.16%
+...........**..*.***          1.40    2.10%
+............*....*..          1.40    2.10%
+.....**.*.***.******          1.38    2.07%
+...........*...****.          1.38    2.06%
+........**.**..*..**          1.38    2.06%
+.....**...**..*.**..          1.35    2.02%
+.....**********.**.*          1.33    2.00%
+.......*.*.*...*..**          1.33    2.00%
+.......*.*.**..**.**          1.33    2.00%
+.....********..*****          1.33    2.00%
+.......*.*.**.*.....          1.33    2.00%
+.....*.****.........          1.33    2.00%
+.....*.****...*.....          1.33    2.00%
+.....****.***.******          1.33    2.00%
+.....*....*........*          1.33    2.00%
+................*..*          1.33    2.00%
+.....*************.*          1.33    2.00%
+..*************.**..          1.33    2.00%
+...............****.          1.33    2.00%
+.....******.*.******          1.29    1.93%
+..***......*........          1.29    1.93%
+........**...*......          1.27    1.90%
+.......*.*...*......          1.25    1.87%
+.......*.*...**.....          1.20    1.80%
+.............*.*****          1.20    1.80%
+.....*.******.*.**..          1.17    1.75%
+...........*..*..*..          1.17    1.75%
+........**..*...*..*          1.17    1.75%
+......*...*.........          1.14    1.71%
+.......*.*..*.......          1.14    1.71%
+..............*....*          1.13    1.70%
+..*****.*******.**.*          1.13    1.70%
+.......*...*.....*..          1.12    1.69%
+..****..*.*.........          1.10    1.65%
+.....**.***.*.*.**..          1.10    1.64%
+.....********.*****.          1.10    1.64%
+.....**********.****          1.05    1.57%
+.....********.*.****          1.05    1.57%
+...........*.**.....          1.03    1.55%
+.....**.........**..          1.02    1.53%
+......**.*..........          1.00    1.50%
+.....*..*.*.....*..*          1.00    1.50%
+.....*..*.*..**.**.*          1.00    1.50%
+..***********.*.**..          1.00    1.50%
+.......*.*.*..*.....          1.00    1.50%
+.......*.*.****.....          1.00    1.50%
+.......*.*.*****..**          1.00    1.50%
+.......*.*.*****.***          1.00    1.50%
+......**.*.*********          1.00    1.50%
+..***...**...*.....*          1.00    1.50%
+..***...**.***.....*          1.00    1.50%
+..***...**.***.*..**          1.00    1.50%
+......**....*...*...          1.00    1.50%
+.....*....*...*....*          1.00    1.50%
+.....*....*...*..*.*          1.00    1.50%
+.....***..*.*.*.**.*          1.00    1.50%
+.....***..***.*.**.*          1.00    1.50%
+...........*...*****          1.00    1.50%
+.....**.***.*.......          1.00    1.50%
+.....**.*****..*****          1.00    1.50%
+.....**.******.*****          1.00    1.50%
+.......*........**..          1.00    1.50%
+.......*.......*****          1.00    1.50%
+......**.......*****          1.00    1.50%
+......**...**..*****          1.00    1.50%
+.......***....*.*...          1.00    1.50%
+.....**...*.*.......          1.00    1.50%
+.....**...*.*....*..          1.00    1.50%
+.....**...*.*..*.***          1.00    1.50%
+........*.....*.....          1.00    1.50%
+........**....*.....          1.00    1.50%
+............*...**..          1.00    1.50%
+.....**...*........*          1.00    1.50%
+.....**...*.*...**.*          1.00    1.50%
+.....**...*.*..*****          1.00    1.50%
+.....***..***..*****          1.00    1.50%
+..............*.**..          1.00    1.50%
+......*.***.*.......          1.00    1.50%
+......*.***.***.....          1.00    1.50%
+.....**.***.***....*          1.00    1.50%
+.....**.***.***.**.*          1.00    1.50%
+.....**.***.******.*          1.00    1.50%
+.....********..*..**          1.00    1.50%
+..*..***************          1.00    1.50%
+..**.***************          1.00    1.50%
+.......*...*...*.*..          1.00    1.50%
+.......*...*...*.**.          1.00    1.50%
+.....**...*...*.*...          1.00    1.50%
+.....***..**.******.          1.00    1.50%
+..**********.*******          1.00    1.50%
+.....**.***..**.**..          1.00    1.50%
+.....**.***.***.**..          1.00    1.50%
+...........**.*....*          1.00    1.50%
+.......****.........          1.00    1.50%
+.......****....*..*.          1.00    1.50%
+.......******.**..**          1.00    1.50%
+...........**..*..*.          1.00    1.50%
+.......****...*.....          1.00    1.50%
+.......****...*..*..          1.00    1.50%
+.....*.......*..*...          1.00    1.50%
+.....*.************.          1.00    1.50%
+.....******.*...**..          1.00    1.50%
+........*****.......          1.00    1.50%
+..***.*......*......          1.00    1.50%
+..*****......*..*...          1.00    1.50%
+..*****.******..*...          1.00    1.50%
+..************..**..          1.00    1.50%
+..************.***..          1.00    1.50%
+..************.****.          1.00    1.50%
+.......*...*...*..*.          1.00    1.50%
+........*...*.*.....          1.00    1.50%
+........**..*.*.....          1.00    1.50%
+......*......*......          1.00    1.50%
+......*......*.*..**          1.00    1.50%
+.....*....*.....*...          1.00    1.50%
+.....*....*.....**..          1.00    1.50%
+.....*.*..**....**..          1.00    1.50%
+.....*.******...**..          1.00    1.50%
+.....**.*.***.......          1.00    1.50%
+.....********.*.....          1.00    1.50%
+........*.*...*.....          1.00    1.50%
+........*.*...*..*..          1.00    1.50%
+........*.*...*.**..          1.00    1.50%
+..****.......*......          1.00    1.50%
+........**.*......**          1.00    1.50%
+.....***..*.*.*.**..          1.00    1.50%
+........***...*.....          1.00    1.50%
+........***..**.....          1.00    1.50%
+.....*.....**...*...          1.00    1.50%
+.....**....**...*...          1.00    1.50%
+.....**....**...**..          1.00    1.50%
+.....**.*******.**..          1.00    1.50%
+.......***..*.*.....          1.00    1.50%
+.......***..*.*.*...          1.00    1.50%
+.....*....*......*..          1.00    1.50%
+.....**...*......*..          1.00    1.50%
+.....*..***...*....*          1.00    1.50%
+.......*.......*..**          1.00    1.50%
+.......*.*..*..*..**          1.00    1.50%
+.......*.*..****..**          1.00    1.50%
+.......*.*..****.***          1.00    1.50%
+.......*.*..********          1.00    1.50%
+.....******.********          1.00    1.50%
+........**..*...*...          1.00    1.50%
+......****..*...*...          1.00    1.50%
+...........*...*.***          1.00    1.50%
+.....*....**..**.***          1.00    1.50%
+.......*...**..*..**          1.00    1.50%
+.......*...**..**.**          1.00    1.50%
+.....**..**..**.**..          1.00    1.50%
+.....***.**..**.**..          1.00    1.50%
+............*.*.....          1.00    1.50%
+............***.....          1.00    1.50%
+............***.**..          1.00    1.50%
+............******..          1.00    1.50%
+.....*******........          1.00    1.50%
+.....*******......*.          1.00    1.50%
+..****..*.*..*..**..          1.00    1.50%
+..****..*.****.*****          1.00    1.50%
+..****..*.**********          1.00    1.50%
+..****..************          1.00    1.50%
+.....*..**....*.....          1.00    1.50%
+.....**.***...*.....          1.00    1.50%
+..*****.***.*.*.....          1.00    1.50%
+..*****.*****.*.....          1.00    1.50%
+..***********.*..*..          1.00    1.50%
+..*************.***.          1.00    1.50%
+...........*......**          1.00    1.50%
+...........*.*....**          1.00    1.50%
+...........*.*.*..**          1.00    1.50%
+.....**...**.*******          1.00    1.50%
+.....**...**********          1.00    1.50%
+.....**.*.**....**..          1.00    1.50%
+.....*******....**..          1.00    1.50%
+..***.......*.......          1.00    1.50%
+..***...**..*.......          1.00    1.50%
+..***...**.**.......          1.00    1.50%
+..***...**.***.*****          1.00    1.50%
+...........**..*....          1.00    1.50%
+.....**.*.*..**.**..          1.00    1.50%
+.......*.*.**..****.          1.00    1.50%
+..***.*.............          1.00    1.50%
+..***.*.*.*.........          1.00    1.50%
+..*****.*.*..**.....          1.00    1.50%
+.............**.****          1.00    1.50%
+..***..*.*.*........          1.00    1.50%
+..***..*.*.**.......          1.00    1.50%
+..****.******.......          1.00    1.50%
+..****.******..*....          1.00    1.50%
+.......*.....**.....          1.00    1.50%
+.......*.....***..**          1.00    1.50%
+.......*.....*******          1.00    1.50%
+.....*..*****.......          1.00    1.50%
+.....**.*****.......          1.00    1.50%
+..........**..*..*..          1.00    1.50%
+.....*....**..*.**..          1.00    1.50%
+.....*******..*.**..          1.00    1.50%
+...........*.*.****.          1.00    1.50%
+........*..........*          1.00    1.50%
+.....**.***...*....*          1.00    1.50%
+.....******...*....*          1.00    1.50%
+.....******.*.*....*          1.00    1.50%
+.....**.*****.*.**.*          1.00    1.50%
+..*****.............          1.00    1.50%
+..*****...*...*.....          1.00    1.50%
+.........*..*....*..          1.00    1.50%
+.........*.**....*..          1.00    1.50%
+.......*.*.**.*..*..          1.00    1.50%
+.....*..************          0.93    1.40%
+.......***.*........          0.92    1.38%
+...........*.**..*..          0.92    1.37%
+........*..*........          0.90    1.36%
+.......*....*.......          0.88    1.31%
+...........*.*......          0.83    1.25%
+.....**.*.*.....*...          0.83    1.25%
+..*.*...............          0.80    1.20%
+..****....*.........          0.73    1.10%
+..............**..*.          0.71    1.07%
+........*.*........*          0.71    1.07%
+........*.*.....*..*          0.71    1.07%
+........*.*.*...*..*          0.71    1.07%
+.......****.*...*..*          0.71    1.07%
+.....*.****.*...*..*          0.71    1.07%
+.....******.*...*..*          0.71    1.07%
+..*********.*...*..*          0.71    1.07%
+.....**.*.*..*..**..          0.70    1.05%
+.......*************          0.70    1.05%
+...........*...*....          0.67    1.00%
+.......*.*.*...*..*.          0.67    1.00%
+.....*..*.*.*...*..*          0.67    1.00%
+.....**.*.*.*...*..*          0.67    1.00%
+.....**.*.*.*...**.*          0.67    1.00%
+.....**.*.*.*.*.**.*          0.67    1.00%
+.....*.******.......          0.67    1.00%
+.....**...*...*..*..          0.67    1.00%
+.....**...**..*.....          0.67    1.00%
+........**..**..*..*          0.67    1.00%
+........**..**.**.**          0.67    1.00%
+.....*.*..*...*.**..          0.67    1.00%
+.....*.*..*...****..          0.67    1.00%
+.....***..*...*****.          0.67    1.00%
+.......***.........*          0.67    1.00%
+......*........*..*.          0.67    1.00%
+.....*.*****.**.**..          0.67    1.00%
+.....*******.******.          0.67    1.00%
+...........*.*..***.          0.67    1.00%
+.......*.*.**.*.**..          0.67    1.00%
+.....**.*.***..*****          0.67    1.00%
+.............*...*..          0.64    0.96%
+.....*..***.*.*....*          0.62    0.94%
+..............**..**          0.60    0.90%
+.........*.***.*****          0.60    0.90%
+........*....*......          0.60    0.90%
+........**..**..*...          0.60    0.90%
+........**.***..*...          0.60    0.90%
+..****........*.....          0.60    0.90%
+..****....*...*.....          0.60    0.90%
+..****..*******.**..          0.60    0.90%
+..*****.*******.**..          0.60    0.90%
+.........*.*****.***          0.60    0.90%
+.....**...**..******          0.60    0.89%
+.....**...*.....**.*          0.54    0.81%
+......**.*.**.......          0.50    0.75%
+.....**.*.**...*****          0.50    0.75%
+..****.****...*.....          0.50    0.75%
+..*********...*.....          0.50    0.75%
+..*********...*.**..          0.50    0.75%
+.......*....**......          0.50    0.75%
+.....**.***.....*...          0.50    0.75%
+.....**.****..******          0.50    0.75%
+.....**.***.*...*...          0.50    0.75%
+.....**.***.*...*.**          0.50    0.75%
+.....**...*.*..*.*..          0.50    0.75%
+.....**...**..*..*..          0.50    0.75%
+.....**.*****.*.*..*          0.50    0.75%
+...........**.*.....          0.50    0.75%
+.....**.***..*..**..          0.50    0.75%
+.....**.***..*.*****          0.50    0.75%
+.........*.**.**..**          0.50    0.75%
+.....**.*****.**..**          0.50    0.75%
+.........*...*......          0.50    0.75%
+........*...*...*...          0.50    0.75%
+........*...*...*..*          0.50    0.75%
+..*****...**..*.....          0.50    0.75%
+..*****...**..*..*..          0.50    0.75%
+...........**....*..          0.50    0.75%
+..***********.****..          0.50    0.75%
+.....*.********.**..          0.50    0.75%
+..****.********.**..          0.50    0.75%
+.............*...**.          0.50    0.75%
+......*......*..***.          0.50    0.75%
+..........*.....**..          0.50    0.75%
+.......***.**..**.**          0.50    0.75%
+...........**.....**          0.50    0.75%
+.......**...........          0.50    0.75%
+.......***.***.**.**          0.50    0.75%
+.......***.***.*****          0.50    0.75%
+.......*******.*****          0.50    0.75%
+.............*******          0.50    0.75%
+.....*....*..*******          0.50    0.75%
+.....**...*..*******          0.50    0.75%
+........*..*......*.          0.48    0.71%
+.......***.*...*..**          0.43    0.65%
+.....***.**.*.*.**..          0.43    0.64%
+.....**.*.*.....**.*          0.43    0.64%
+.....**.*.***...**.*          0.43    0.64%
+...............*.**.          0.43    0.64%
+.............*.*.**.          0.43    0.64%
+..*********.*.*.*..*          0.43    0.64%
+.....*........*....*          0.40    0.60%
+.............**.**.*          0.40    0.60%
+.....****.**........          0.40    0.60%
+.....********..*..*.          0.40    0.60%
+.....********.**..**          0.40    0.60%
+...............**.**          0.40    0.60%
+.......***.*.*.**.**          0.40    0.60%
+...........****.....          0.40    0.60%
+.....**.***.....**..          0.40    0.60%
+.....**.***.....****          0.40    0.60%
+.....**.*******.****          0.40    0.60%
+.........*.**.......          0.40    0.60%
+..****....*...*..*..          0.40    0.60%
+........**..**......          0.40    0.60%
+..***......*..*.....          0.40    0.60%
+..***...**.****.....          0.40    0.60%
+............*..*.*..          0.40    0.60%
+...........**..*.**.          0.40    0.60%
+........*..*......**          0.38    0.57%
+......*......*.****.          0.38    0.56%
+.....*..*****.******          0.38    0.56%
+.......*.*.**..*****          0.33    0.50%
+......****.**.......          0.33    0.50%
+........*..**.......          0.33    0.50%
+........**.**...*..*          0.33    0.50%
+..*****...*.........          0.33    0.50%
+..*****...*..**.....          0.33    0.50%
+.....*.****...*.**..          0.33    0.50%
+.....*.****...****..          0.33    0.50%
+.....******...*****.          0.33    0.50%
+.....*******..*****.          0.33    0.50%
+.....*.*..*...*.....          0.33    0.50%
+.......*......*.**..          0.33    0.50%
+.....******.*..*****          0.33    0.50%
+..************.*****          0.33    0.50%
+.....**...*.*.*.**..          0.33    0.50%
+.....***.**.*.****..          0.33    0.50%
+.......***.....*..**          0.33    0.50%
+.....**...*.*...*...          0.33    0.50%
+.....**...*****.**..          0.33    0.50%
+.......***.*.***.***          0.33    0.50%
+.......***.*********          0.33    0.50%
+......****.*********          0.33    0.50%
+......*.....*...*...          0.33    0.50%
+......*....****.**..          0.33    0.50%
+.....*.****........*          0.33    0.50%
+.....*.****....*..**          0.33    0.50%
+.......*..*...*..*..          0.33    0.50%
+.....*....*....*****          0.33    0.50%
+.....*....**.*******          0.33    0.50%
+.....*..*.**********          0.33    0.50%
+...........*..*.**..          0.33    0.50%
+.......*.*.*.**.**..          0.33    0.50%
+...........*.**.**..          0.33    0.50%
+.....*..*.**.**.**..          0.33    0.50%
+.............*..***.          0.33    0.50%
+.......*.*..*.*.....          0.33    0.50%
+.....**.*.*....*****          0.33    0.50%
+.............*.**.**          0.30    0.45%
+.......***.*...*..*.          0.30    0.45%
+.......*****..**.**.          0.30    0.45%
+..*****.....*...*...          0.30    0.45%
+...........**.**..*.          0.29    0.43%
+...........**.**..**          0.29    0.43%
+..*********.***.*..*          0.29    0.43%
+.................**.          0.29    0.43%
+.....**.****..*.**..          0.25    0.37%
+.....**.***....**.**          0.25    0.37%
+...........*.***.*..          0.25    0.37%
+...............*.*..          0.25    0.37%
+.....**.***.*..*****          0.25    0.37%
+.....**.***..*******          0.25    0.37%
+...........*....**..          0.25    0.37%
+..*****...*..**.**..          0.25    0.37%
+......*...*.....**..          0.25    0.37%
+.......******..*****          0.25    0.37%
+.....**.......*.....          0.25    0.37%
+.....***..*..**.**..          0.25    0.37%
+.....**...*...******          0.25    0.37%
+.......*.*.**.**..**          0.20    0.30%
+..*****.*.*..*..**..          0.20    0.30%
+.......***.*...**.**          0.20    0.30%
+.......***.*..*.....          0.20    0.30%
+.......***.*..**..**          0.20    0.30%
+.......***.**.**..**          0.20    0.30%
+.......******.**.***          0.20    0.30%
+.......*********.***          0.20    0.30%
+.......*****..**.***          0.20    0.30%
+..*****.........*...          0.20    0.30%
+...........*.*..**..          0.20    0.30%
+.........*.***..**..          0.20    0.30%
+.........*.**..*..**          0.20    0.30%
+........**.***..**..          0.20    0.30%
+..***.........*.....          0.20    0.30%
+.....**...*....*****          0.20    0.30%
+.........*...**....*          0.20    0.30%
+.........*.*.**...**          0.20    0.30%
+.........*.*.***..**          0.20    0.30%
+.........*.*.***.***          0.20    0.30%
+.........*.*********          0.20    0.30%
+........*..**..*..*.          0.20    0.30%
+..****....*.....*...          0.20    0.30%
+..****....*.....**..          0.20    0.30%
+..****.*.**..**.**..          0.20    0.30%
+..****.************.          0.20    0.30%
+............***..*..          0.20    0.30%
+........**.*...*..**          0.20    0.30%
+........**.*****.***          0.20    0.30%
+........**.*********          0.20    0.30%
+......*.**.*********          0.20    0.30%
+.......***.*......**          0.20    0.29%
+........**..*......*          0.17    0.25%
+.......***..**.*****          0.17    0.25%
+..*****.*******.*..*          0.17    0.25%
+..*****...*..**..*..          0.17    0.25%
+......**.*.**.*.**..          0.17    0.25%
+.......***.*......*.          0.14    0.21%
+......*.........**..          0.14    0.21%
+...........*..**..*.          0.14    0.21%
+..***.....*.........          0.14    0.21%
+..***.....*...*.....          0.14    0.21%
+..***.....*...*....*          0.14    0.21%
+..*****...*...*.**.*          0.14    0.21%
+..*****...**..*.**.*          0.14    0.21%
+..*****...**..******          0.14    0.21%
+..............*...*.          0.14    0.21%
+.......***.**.*...*.          0.14    0.21%
+.......***.**.**..*.          0.14    0.21%
+.....**...*..*..**.*          0.14    0.21%
+.............*.*.*..          0.14    0.21%
+.............*.*....          0.14    0.21%
+.....**.***..**.****          0.12    0.19%
+.......*...*....**..          0.12    0.19%
+.......*...*...****.          0.12    0.19%
+.....*.******.******          0.12    0.19%
+...........*....*...          0.12    0.19%
+..*****...*..*******          0.12    0.19%
+...............**...          0.10    0.15%
+...............**.*.          0.10    0.15%
+.......***.....**.**          0.10    0.15%
+.......***.*.......*          0.10    0.15%
+................*.**          0.10    0.15%
+.......***.*..**..*.          0.10    0.15%
+..*****.....*...*..*          0.10    0.15%
+.....**.....*...*...          0.10    0.15%
+............**......          0.10    0.14%
+.....*******..******          0.10    0.14%
+.....**...*.*.****..          0.10    0.14%
+..........*...*.**..          0.05    0.07%
+........*..*...*..**          0.05    0.07%
+.....**...*.***.**..          0.05    0.07%
+
+Consensus tree(s) written to treefile: ~/eeob563/eeob563-labs/lab2/bootMajRule.tre
+
+paup> log stop; quit;
